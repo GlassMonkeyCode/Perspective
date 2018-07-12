@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AngleAndDistance.cs" />
     <Compile Include="GraphicsRenderer.cs" />
     <Compile Include="HelperFunctions.cs" />
     <Compile Include="Perspective.cs">
