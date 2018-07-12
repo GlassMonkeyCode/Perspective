@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Perspective
 {
-    public partial class Form1 : Form
+    public partial class Perspective : Form
     {
-        public Form1()
+        public Perspective()
         {
             InitializeComponent();
+        }
+
+        private void Perspective_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
