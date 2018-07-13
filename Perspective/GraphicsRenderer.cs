@@ -55,12 +55,12 @@ namespace Perspective
                 PointF[] bottoms = new PointF[] { pointA, pointB, pointC, pointD };
                 PointF[] tops = new PointF[] { pointE, pointF, pointG, pointH };
 
-                PointF[] rotatedAroundZBot = HelperFunctions.RotatePolygon(bottomFacePoints, zAngle, centrePoint);
-                PointF[] rotatedAroundZTop = HelperFunctions.RotatePolygon(topFacePoints, zAngle, centrePoint);
-                PointF[] rotatedAroundZL = HelperFunctions.RotatePolygon(leftBackFacePoints, zAngle, centrePoint);
-                PointF[] rotatedAroundZR = HelperFunctions.RotatePolygon(rightBackFacePoints, zAngle, centrePoint);
-                PointF[] rotatedAroundZactbot = HelperFunctions.RotatePolygon(bottoms, zAngle, centrePoint);
-                PointF[] rotatedAroundZacttop = HelperFunctions.RotatePolygon(tops, zAngle, centrePoint);
+                PointF[] rotatedAroundZBot = HelperFunctions.RotatePolygon(bottomFacePoints, zAngle, pointA);
+                PointF[] rotatedAroundZTop = HelperFunctions.RotatePolygon(topFacePoints, zAngle, pointA);
+                PointF[] rotatedAroundZL = HelperFunctions.RotatePolygon(leftBackFacePoints, zAngle, pointA);
+                PointF[] rotatedAroundZR = HelperFunctions.RotatePolygon(rightBackFacePoints, zAngle, pointA);
+                PointF[] rotatedAroundZactbot = HelperFunctions.RotatePolygon(bottoms, zAngle, pointA);
+                PointF[] rotatedAroundZacttop = HelperFunctions.RotatePolygon(tops, zAngle, pointA);
 
                 graphics.FillPolygon(Brushes.LightBlue, rotatedAroundZBot);
                 graphics.FillPolygon(Brushes.SteelBlue, rotatedAroundZTop);
@@ -75,7 +75,8 @@ namespace Perspective
                 graphics.DrawPolygon(Pens.Black, rotatedAroundZR);
                 graphics.DrawPolygon(Pens.Black, rotatedAroundZL);
 
-                // This comment should make this file a different version.
+    
+
 
                 graphics.Dispose();
             }
