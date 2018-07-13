@@ -38,47 +38,49 @@ namespace Perspective
         private void Perspective_Resize(object sender, EventArgs e)
         {
             centrePoint = new Point((picMain.Width / 2), (picMain.Height / 2) + 200);
-            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, _yAngle, tbZRotate.Value, centrePoint, tbLength.Value);
+            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, tbYRotate.Value, tbZRotate.Value, centrePoint, tbLength.Value);
         }
 
         private void tbXRotate_Scroll(object sender, EventArgs e)
         {
             centrePoint.Y = tbYTransform.Value;
             centrePoint.X = tbXTransform.Value;
-            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, _yAngle, tbZRotate.Value, centrePoint, tbLength.Value);
+            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, tbYRotate.Value, tbZRotate.Value, centrePoint, tbLength.Value);
         }
 
         private void tbYRotate_Scroll(object sender, EventArgs e)
         {
-
+            centrePoint.Y = tbYTransform.Value;
+            centrePoint.X = tbXTransform.Value;
+            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, tbYRotate.Value, tbZRotate.Value, centrePoint, tbLength.Value);
         }
 
         private void tbZRotate_Scroll(object sender, EventArgs e)
         {
             centrePoint.Y = tbYTransform.Value;
             centrePoint.X = tbXTransform.Value;
-            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, _yAngle, tbZRotate.Value, centrePoint, tbLength.Value);
+            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, tbYRotate.Value, tbZRotate.Value, centrePoint, tbLength.Value);
         }
 
         private void tbLength_Scroll(object sender, EventArgs e)
         {
             centrePoint.Y = tbYTransform.Value;
             centrePoint.X = tbXTransform.Value;
-            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, _yAngle, tbZRotate.Value, centrePoint, tbLength.Value);
+            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, tbYRotate.Value, tbZRotate.Value, centrePoint, tbLength.Value);
         }
 
         private void tbXTransform_Scroll(object sender, EventArgs e)
         {
             centrePoint.Y = tbYTransform.Value;
             centrePoint.X = tbXTransform.Value;
-            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, _yAngle, tbZRotate.Value, centrePoint, tbLength.Value);
+            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, tbYRotate.Value, tbZRotate.Value, centrePoint, tbLength.Value);
         }
 
         private void tbYTransform_Scroll(object sender, EventArgs e)
         {
             centrePoint.Y = tbYTransform.Value;
             centrePoint.X = tbXTransform.Value;
-            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, _yAngle, tbZRotate.Value, centrePoint, tbLength.Value);
+            picMain.BackgroundImage = GraphicsRenderer.DrawCube(picMain, tbXRotate.Value, tbYRotate.Value, tbZRotate.Value, centrePoint, tbLength.Value);
         }
     }
 }

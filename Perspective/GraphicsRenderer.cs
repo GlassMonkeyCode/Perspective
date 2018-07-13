@@ -25,9 +25,10 @@ namespace Perspective
                 // X and Y angles are both 20ish. It is the Z angle that will change.
                 // 90 for x and y looks directly at the screen, 0 would show a line
                 double perceivedLengthXDouble = actualEdgeLength * Math.Cos(radX);
-                double perceivedLengthYDouble = actualEdgeLength * Math.Cos(radY);
+                double perceivedLengthYDouble = actualEdgeLength * Math.Tan(radY);
 
                 float perceivedEdgeLengthX = Convert.ToSingle(perceivedLengthXDouble);
+                float perceivedEdgeLengthY = Convert.ToSingle(perceivedLengthYDouble);
 
                 graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
@@ -37,16 +38,17 @@ namespace Perspective
                 float bottomYs = centrePoint.X + halfEdgeLength;
 
                 float halfPercX = perceivedEdgeLengthX / 2F;
+                float halfPercY = perceivedEdgeLengthY / 2F;
 
-                PointF pointA = new PointF(leftXs, bottomYs + halfPercX);
-                PointF pointB = new PointF(rightXs, bottomYs + halfPercX);
-                PointF pointC = new PointF(rightXs + halfPercX, topYs + halfPercX);
-                PointF pointD = new PointF(leftXs + halfPercX, topYs + halfPercX);
+                PointF pointA = new PointF(leftXs, bottomYs + halfPercX + halfPercY);
+                PointF pointB = new PointF(rightXs, bottomYs + halfPercX + halfPercY);
+                PointF pointC = new PointF(rightXs + halfPercX + halfPercY, topYs + halfPercX + halfPercY);
+                PointF pointD = new PointF(leftXs + halfPercX + halfPercY, topYs + halfPercX + halfPercY);
 
-                PointF pointE = new PointF(leftXs, bottomYs + halfPercX - actualEdgeLength);
-                PointF pointF = new PointF(rightXs, bottomYs + halfPercX - actualEdgeLength);
-                PointF pointG = new PointF(rightXs + halfPercX, topYs + halfPercX - actualEdgeLength);
-                PointF pointH = new PointF(leftXs + halfPercX, topYs + halfPercX - actualEdgeLength);
+                PointF pointE = new PointF(leftXs, bottomYs + halfPercX + halfPercY - actualEdgeLength);
+                PointF pointF = new PointF(rightXs, bottomYs + halfPercX + halfPercY - actualEdgeLength);
+                PointF pointG = new PointF(rightXs + halfPercX + halfPercY, topYs + halfPercX + halfPercY - actualEdgeLength);
+                PointF pointH = new PointF(leftXs + halfPercX + halfPercY, topYs + halfPercX + halfPercY - actualEdgeLength);
 
                 PointF[] bottomFacePoints = new PointF[] { pointA, pointE, pointF, pointB };
                 PointF[] topFacePoints = new PointF[] { pointB, pointF, pointG, pointC };
